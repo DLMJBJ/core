@@ -13,10 +13,10 @@ public class OrderApp {
         OrderService orderService = appConfig.orderService();
 
         Long memberId = 1L;
-        Member member = new Member(memberId, "memberB", Grade.BASIC);
+        Member member = new Member(memberId, "memberB", Grade.VIP);
         memberService.join(member);
 
-        Order order =  orderService.createOrder(memberId, "itemA", 10000);
+        Order order =  orderService.createOrder(memberId, "itemA", 20000);
         System.out.println("order = "+order.toString());
         int discount = order.calculatePrice();
         System.out.println("Price = "+discount);
